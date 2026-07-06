@@ -63,9 +63,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A80B9DDF28A54CCAA8F79FD1ECAC66A7 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B0B7C027D4414871AA16B73E16D0D79C }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_5918D04EE11747CC80B389241D8148E5 }}
+          app-name: 'mi-api-ariel-demo'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
